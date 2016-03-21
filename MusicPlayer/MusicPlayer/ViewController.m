@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "Music.h"
+#import <MJExtension/MJExtension.h>
+#import "MusicTools.h"
 
 @interface ViewController ()
 /// 背景图片
@@ -27,21 +29,37 @@
 /// 歌手名字
 @property (weak, nonatomic) IBOutlet UILabel *singerLabel;
 /// 专辑封面
-@property (weak, nonatomic) IBOutlet UIImageView *albumImage;
+@property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
+
+//=========私有属性==========
+/// 音乐数组
+@property (nonatomic, strong) NSArray *allMusics;
+/// 当前播放的音乐的索引值
+@property (nonatomic, assign) NSInteger currentMusicIndex;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupUI];
+#pragma mark - 懒加载
+- (NSArray *)allMusics {
+    if (!_allMusics) {
+        _allMusics = [Music mj_objectArrayWithFilename:@"mlist.plist"];
+    }
+    return _allMusics;
 }
 
-- (void)setupUI {
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"%@", self.allMusics);
     
+    [self setupUI];
+    [self setupMusicInfo];
+}
+
 #pragma mark - 玻璃效果
+- (void)setupUI {
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleBlack;
     toolBar.translucent = YES;
@@ -60,24 +78,53 @@
     
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.translucent = YES;
+}
+
+#pragma mark - 设计界面信息
+- (void)setupMusicInfo {
+
+    Music *music = self.allMusics[self.currentMusicIndex];
     
+    self.singerLabel.text = music.singer;
+    self.albumLabel.text = music.zhuanji;
     
+    self.bgImageView.image = [UIImage imageNamed:music.image];
+    self.albumImageView.image = [UIImage imageNamed:music.image];
+    
+    self.title = music.name;
 }
 
 #pragma mark - 音乐控制
+/// 下一首
+- (IBAction)nextSong:(id)sender {
+    self.currentMusicIndex = (self.currentMusicIndex == self.allMusics.count - 1) ? 0 : self.currentMusicIndex + 1 ;
+    [self playMusic:nil];
+    [self setupMusicInfo];
+}
+
+/// 上一首
+- (IBAction)preSong:(id)sender {
+    self.currentMusicIndex = (self.currentMusicIndex == 0) ? self.allMusics.count - 1 : self.currentMusicIndex - 1;
+    [self playMusic:nil];
+    [self setupMusicInfo];
+}
+
 /// 播放音乐
 - (IBAction)playMusic:(id)sender {
+    
+    self.pauseBtn.hidden = NO;
+    self.playBtn.hidden = YES;
+    
+    Music *music = self.allMusics[self.currentMusicIndex];
+    [[MusicTools sharedTools] playWithName:music.mp3];
+    
 }
 /// 暂停音乐
 - (IBAction)pauseMusic:(id)sender {
+    self.playBtn.hidden = NO;
+    self.pauseBtn.hidden = YES;
+    [[MusicTools sharedTools] pause];
 }
-/// 下一首
-- (IBAction)nextSong:(id)sender {
-}
-/// 上一首
-- (IBAction)preSong:(id)sender {
-}
-
 
 
 @end

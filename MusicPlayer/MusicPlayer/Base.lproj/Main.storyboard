@@ -160,7 +160,7 @@
                     <navigationItem key="navigationItem" id="gPg-jl-lre"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="albumImage" destination="pxK-Mg-J4C" id="HRX-m4-Dch"/>
+                        <outlet property="albumImageView" destination="pxK-Mg-J4C" id="jIj-OZ-exJ"/>
                         <outlet property="albumLabel" destination="bLG-z1-Myh" id="co1-jo-csD"/>
                         <outlet property="bgImageView" destination="1BJ-pb-Mpb" id="VFp-Rd-cLo"/>
                         <outlet property="currentTime" destination="DcY-zT-2aO" id="Kxe-vW-cj6"/>
