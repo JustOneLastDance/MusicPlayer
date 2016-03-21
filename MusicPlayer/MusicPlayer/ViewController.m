@@ -60,6 +60,9 @@
 
 #pragma mark - 玻璃效果
 - (void)setupUI {
+    
+    self.progressView.progress = 0.0;
+    
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleBlack;
     toolBar.translucent = YES;
@@ -92,6 +95,8 @@
     self.albumImageView.image = [UIImage imageNamed:music.image];
     
     self.title = music.name;
+    
+    self.totalTime.text = [[MusicTools sharedTools] totalTime];
 }
 
 #pragma mark - 音乐控制
@@ -117,6 +122,9 @@
     
     Music *music = self.allMusics[self.currentMusicIndex];
     [[MusicTools sharedTools] playWithName:music.mp3];
+    if ([self.currentTime.text isEqualToString:@"00:00"]) {
+        self.totalTime.text = [[MusicTools sharedTools] totalTime];
+    }
     
 }
 /// 暂停音乐

@@ -20,5 +20,8 @@
 - (void)playWithName:(NSString *)musicName;
 /// 暂停
 - (void)pause;
-
+/// 歌曲总长
+- (NSString *)totalTime;
+/// 当前时间
+- (NSString *)currentTimeOfMusic;
 @end

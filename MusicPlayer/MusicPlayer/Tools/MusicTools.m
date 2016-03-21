@@ -54,4 +54,22 @@
     }
 }
 
+- (NSString *)totalTime {
+    NSTimeInterval duration = self.player.duration;
+    
+    int min = duration / 60;
+    int sec = (int)duration % 60;
+    
+    return [NSString stringWithFormat:@"%02d:%02d", min, sec];
+}
+
+- (NSString *)currentTimeOfMusic{
+    NSTimeInterval curr = self.player.currentTime;
+    
+    int min = curr / 60;
+    int sec = (int)curr % 60;
+    
+    return [NSString stringWithFormat:@"%02d:%02d", min, sec];
+}
+
 @end
