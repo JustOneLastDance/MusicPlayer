@@ -11,8 +11,9 @@
 		E4C33D341CA00B750062C019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C33D331CA00B750062C019 /* AppDelegate.m */; };
 		E4C33D371CA00B750062C019 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C33D361CA00B750062C019 /* ViewController.m */; };
 		E4C33D3A1CA00B750062C019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C33D381CA00B750062C019 /* Main.storyboard */; };
-		E4C33D3C1CA00B750062C019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C33D3B1CA00B750062C019 /* Assets.xcassets */; };
 		E4C33D3F1CA00B750062C019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C33D3D1CA00B750062C019 /* LaunchScreen.storyboard */; };
+		E4D408841CA010EF005C889F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D408831CA010EF005C889F /* Assets.xcassets */; };
+		E4D408861CA0115A005C889F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D408851CA0115A005C889F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +24,10 @@
 		E4C33D351CA00B750062C019 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4C33D361CA00B750062C019 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E4C33D391CA00B750062C019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E4C33D3B1CA00B750062C019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4C33D3E1CA00B750062C019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4C33D401CA00B750062C019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4D408831CA010EF005C889F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4D408851CA0115A005C889F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 				E4C33D331CA00B750062C019 /* AppDelegate.m */,
 				E4C33D351CA00B750062C019 /* ViewController.h */,
 				E4C33D361CA00B750062C019 /* ViewController.m */,
+				E4D408831CA010EF005C889F /* Assets.xcassets */,
 				E4C33D381CA00B750062C019 /* Main.storyboard */,
-				E4C33D3B1CA00B750062C019 /* Assets.xcassets */,
 				E4C33D3D1CA00B750062C019 /* LaunchScreen.storyboard */,
 				E4C33D401CA00B750062C019 /* Info.plist */,
+				E4D408851CA0115A005C889F /* Images.xcassets */,
 				E4C33D2F1CA00B750062C019 /* Supporting Files */,
 			);
 			path = MusicPlayer;
@@ -138,7 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C33D3F1CA00B750062C019 /* LaunchScreen.storyboard in Resources */,
-				E4C33D3C1CA00B750062C019 /* Assets.xcassets in Resources */,
+				E4D408861CA0115A005C889F /* Images.xcassets in Resources */,
+				E4D408841CA010EF005C889F /* Assets.xcassets in Resources */,
 				E4C33D3A1CA00B750062C019 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.MusicPlayer;
@@ -273,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.MusicPlayer;
@@ -299,6 +305,7 @@
 				E4C33D451CA00B750062C019 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
