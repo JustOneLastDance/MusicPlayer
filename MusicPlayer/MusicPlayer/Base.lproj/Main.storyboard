@@ -96,29 +96,28 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-KK-0Co" userLabel="groupView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="527"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLG-z1-Myh" userLabel="album">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="专辑名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLG-z1-Myh" userLabel="album">
                                         <rect key="frame" x="15" y="496" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="KXT-Yh-Avy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-01-ZhG" userLabel="singer">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="歌手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-01-ZhG" userLabel="singer">
                                         <rect key="frame" x="15" y="465" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="4zW-NT-27n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="李克勤.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-Mg-J4C">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98410099380000005" green="1" blue="0.48668693299999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="PgM-01-ZhG" firstAttribute="leading" secondItem="TZD-KK-0Co" secondAttribute="leading" constant="15" id="26G-vy-q4d"/>
                                     <constraint firstItem="PgM-01-ZhG" firstAttribute="top" secondItem="pxK-Mg-J4C" secondAttribute="bottom" constant="10" id="Rks-pq-bfb"/>
@@ -160,6 +159,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="gPg-jl-lre"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="albumImage" destination="pxK-Mg-J4C" id="HRX-m4-Dch"/>
+                        <outlet property="albumLabel" destination="bLG-z1-Myh" id="co1-jo-csD"/>
+                        <outlet property="bgImageView" destination="1BJ-pb-Mpb" id="VFp-Rd-cLo"/>
+                        <outlet property="currentTime" destination="DcY-zT-2aO" id="Kxe-vW-cj6"/>
+                        <outlet property="pauseBtn" destination="38o-M2-NcB" id="5ry-l6-DgR"/>
+                        <outlet property="playBtn" destination="YY9-Ll-TmE" id="9G5-Zp-XRr"/>
+                        <outlet property="progressView" destination="cup-BF-FTG" id="Xbx-9d-2ET"/>
+                        <outlet property="singerLabel" destination="PgM-01-ZhG" id="71e-az-HG2"/>
+                        <outlet property="totalTime" destination="Cql-u6-kSB" id="eCC-nA-dd7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,27 @@
 //
 
 #import "ViewController.h"
+#import "Music.h"
 
 @interface ViewController ()
+/// 背景图片
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+/// 播放按钮
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
+/// 暂停按钮
+@property (weak, nonatomic) IBOutlet UIButton *pauseBtn;
+/// 进度条
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+/// 当前时间
+@property (weak, nonatomic) IBOutlet UILabel *currentTime;
+/// 总时间
+@property (weak, nonatomic) IBOutlet UILabel *totalTime;
+/// 专辑名称
+@property (weak, nonatomic) IBOutlet UILabel *albumLabel;
+/// 歌手名字
+@property (weak, nonatomic) IBOutlet UILabel *singerLabel;
+/// 专辑封面
+@property (weak, nonatomic) IBOutlet UIImageView *albumImage;
 
 @end
 
@@ -16,12 +35,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupUI {
+    
+#pragma mark - 玻璃效果
+    UIToolbar *toolBar = [[UIToolbar alloc] init];
+    toolBar.barStyle = UIBarStyleBlack;
+    toolBar.translucent = YES;
+    //禁止以frame布局，使用自动布局
+    toolBar.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.bgImageView addSubview:toolBar];
+    
+    //VFL
+    NSArray *consH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:nil views:@{@"bar":toolBar}];
+    NSArray *consV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-|" options:0 metrics:nil views:@{@"bar":toolBar}];
+
+    //addConstraints放多个约束
+    [self.bgImageView addConstraints:consH];
+    [self.bgImageView addConstraints:consV];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = YES;
+    
+    
 }
 
 #pragma mark - 音乐控制
