@@ -24,4 +24,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 音乐控制
+/// 播放音乐
+- (IBAction)playMusic:(id)sender {
+}
+/// 暂停音乐
+- (IBAction)pauseMusic:(id)sender {
+}
+/// 下一首
+- (IBAction)nextSong:(id)sender {
+}
+/// 上一首
+- (IBAction)preSong:(id)sender {
+}
+
+
+
 @end
