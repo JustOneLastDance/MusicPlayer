@@ -72,4 +72,8 @@
     return [NSString stringWithFormat:@"%02d:%02d", min, sec];
 }
 
+- (float)progressOfMusic {
+    return self.player.currentTime / self.player.duration;
+}
+
 @end

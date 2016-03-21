@@ -24,4 +24,6 @@
 - (NSString *)totalTime;
 /// 当前时间
 - (NSString *)currentTimeOfMusic;
+/// 进度条
+- (float)progressOfMusic;
 @end

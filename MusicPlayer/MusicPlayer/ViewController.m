@@ -30,12 +30,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *singerLabel;
 /// 专辑封面
 @property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
-
 //=========私有属性==========
 /// 音乐数组
 @property (nonatomic, strong) NSArray *allMusics;
 /// 当前播放的音乐的索引值
 @property (nonatomic, assign) NSInteger currentMusicIndex;
+/// 定时器
+@property (nonatomic, strong) NSTimer *mainTimer;
 
 @end
 
@@ -62,6 +63,7 @@
 - (void)setupUI {
     
     self.progressView.progress = 0.0;
+    self.progressView.tintColor = [UIColor orangeColor];
     
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleBlack;
@@ -126,12 +128,24 @@
         self.totalTime.text = [[MusicTools sharedTools] totalTime];
     }
     
+    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateByTimer) userInfo:nil repeats:YES];
+    
 }
 /// 暂停音乐
 - (IBAction)pauseMusic:(id)sender {
     self.playBtn.hidden = NO;
     self.pauseBtn.hidden = YES;
     [[MusicTools sharedTools] pause];
+    
+    [self.mainTimer invalidate];
+    self.mainTimer = nil;
+}
+
+/// 定时器执行函数
+- (void)updateByTimer{
+    
+    self.currentTime.text = [[MusicTools sharedTools] currentTimeOfMusic];
+    self.progressView.progress = [[MusicTools sharedTools] progressOfMusic];
 }
 
 
