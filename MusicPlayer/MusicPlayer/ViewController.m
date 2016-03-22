@@ -49,8 +49,7 @@
     }
     return _allMusics;
 }
-
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@", self.allMusics);
@@ -140,7 +139,7 @@
     [self.mainTimer invalidate];
     self.mainTimer = nil;
 }
-
+#pragma mark - 定时器触发方法
 /// 定时器执行函数
 - (void)updateByTimer{
     

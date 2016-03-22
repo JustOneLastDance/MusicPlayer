@@ -31,6 +31,8 @@
 		E42B18701CA0157900FE1D56 /* 泡沫.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E42B185B1CA0157900FE1D56 /* 泡沫.lrc */; };
 		E42B18711CA0157900FE1D56 /* 稳稳的幸福.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E42B185C1CA0157900FE1D56 /* 稳稳的幸福.lrc */; };
 		E46E65E21CA0260100FF8677 /* MusicTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E65E11CA0260100FF8677 /* MusicTools.m */; };
+		E4BA994E1CA0459A005010E8 /* MusicLrc.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BA994D1CA0459A005010E8 /* MusicLrc.m */; };
+		E4BA99511CA04657005010E8 /* MusicLrcTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BA99501CA04657005010E8 /* MusicLrcTools.m */; };
 		E4C33D311CA00B750062C019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C33D301CA00B750062C019 /* main.m */; };
 		E4C33D341CA00B750062C019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C33D331CA00B750062C019 /* AppDelegate.m */; };
 		E4C33D371CA00B750062C019 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C33D361CA00B750062C019 /* ViewController.m */; };
@@ -70,6 +72,10 @@
 		E42B185C1CA0157900FE1D56 /* 稳稳的幸福.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "稳稳的幸福.lrc"; sourceTree = "<group>"; };
 		E46E65E01CA0260100FF8677 /* MusicTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTools.h; sourceTree = "<group>"; };
 		E46E65E11CA0260100FF8677 /* MusicTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTools.m; sourceTree = "<group>"; };
+		E4BA994C1CA0459A005010E8 /* MusicLrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicLrc.h; sourceTree = "<group>"; };
+		E4BA994D1CA0459A005010E8 /* MusicLrc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLrc.m; sourceTree = "<group>"; };
+		E4BA994F1CA04657005010E8 /* MusicLrcTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicLrcTools.h; sourceTree = "<group>"; };
+		E4BA99501CA04657005010E8 /* MusicLrcTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLrcTools.m; sourceTree = "<group>"; };
 		E4C33D2C1CA00B750062C019 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C33D301CA00B750062C019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4C33D321CA00B750062C019 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 			children = (
 				E42B18441CA0131D00FE1D56 /* Music.h */,
 				E42B18451CA0131D00FE1D56 /* Music.m */,
+				E4BA994C1CA0459A005010E8 /* MusicLrc.h */,
+				E4BA994D1CA0459A005010E8 /* MusicLrc.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +126,8 @@
 			children = (
 				E46E65E01CA0260100FF8677 /* MusicTools.h */,
 				E46E65E11CA0260100FF8677 /* MusicTools.m */,
+				E4BA994F1CA04657005010E8 /* MusicLrcTools.h */,
+				E4BA99501CA04657005010E8 /* MusicLrcTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -352,7 +362,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46E65E21CA0260100FF8677 /* MusicTools.m in Sources */,
+				E4BA994E1CA0459A005010E8 /* MusicLrc.m in Sources */,
 				E4C33D371CA00B750062C019 /* ViewController.m in Sources */,
+				E4BA99511CA04657005010E8 /* MusicLrcTools.m in Sources */,
 				E4C33D341CA00B750062C019 /* AppDelegate.m in Sources */,
 				E4C33D311CA00B750062C019 /* main.m in Sources */,
 				E42B18461CA0131D00FE1D56 /* Music.m in Sources */,
