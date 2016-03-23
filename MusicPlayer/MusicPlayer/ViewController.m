@@ -135,9 +135,12 @@
         self.totalTime.text = [[MusicTools sharedTools] totalTime];
     }
     
-    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(updateByTimer) userInfo:nil repeats:YES];
+    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(updateByTimer) userInfo:nil repeats:YES];
     
     self.allLrcLines = [MusicLrcTools arrayOfLrcLinesWithName:music.lrc];
+    for (MusicLrc *lc in self.allLrcLines) {
+        NSLog(@"%f  ~ %@", lc.time, lc.text);
+    }
 }
 /// 暂停音乐
 - (IBAction)pauseMusic:(id)sender {
@@ -170,9 +173,8 @@
             nextLrc = self.allLrcLines[i+1];
         }
         //当时间在这2行歌词之间时，才能显示歌词
-        if (currentTimeFloat >= currentLrc.time && currentTimeFloat <= nextLrc.time) {
+        if (currentTimeFloat >= currentLrc.time && currentTimeFloat < nextLrc.time) {
             self.lrcLabel.text = currentLrc.text;
-//            NSLog(@"%@", currentLrc.text);
             self.lrcLabel.progress = (currentTimeFloat - currentLrc.time)/(nextLrc.time - currentLrc.time);
         }
         
