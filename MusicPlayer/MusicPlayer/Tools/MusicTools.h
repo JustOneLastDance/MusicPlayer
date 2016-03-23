@@ -26,4 +26,6 @@
 - (NSString *)currentTimeOfMusic;
 /// 进度条
 - (float)progressOfMusic;
+/// 以NSTimeInterval获取当前歌曲时间
+- (NSTimeInterval)currentTimeFloatOfMusic;
 @end

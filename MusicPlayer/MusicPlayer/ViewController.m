@@ -7,11 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "Music.h"
 #import <MJExtension/MJExtension.h>
+#import "Music.h"
 #import "MusicTools.h"
+#import "MusicLrc.h"
+#import "MusicLrcTools.h"
+#import "JustinLabel.h"
 
 @interface ViewController ()
+/// 显示单行歌词
+@property (weak, nonatomic) IBOutlet JustinLabel *lrcLabel;
 /// 背景图片
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 /// 播放按钮
@@ -37,6 +42,8 @@
 @property (nonatomic, assign) NSInteger currentMusicIndex;
 /// 定时器
 @property (nonatomic, strong) NSTimer *mainTimer;
+/// 歌曲的歌词数组
+@property (nonatomic, strong) NSArray *allLrcLines;
 
 @end
 
@@ -49,6 +56,7 @@
     }
     return _allMusics;
 }
+
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -127,8 +135,9 @@
         self.totalTime.text = [[MusicTools sharedTools] totalTime];
     }
     
-    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateByTimer) userInfo:nil repeats:YES];
+    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(updateByTimer) userInfo:nil repeats:YES];
     
+    self.allLrcLines = [MusicLrcTools arrayOfLrcLinesWithName:music.lrc];
 }
 /// 暂停音乐
 - (IBAction)pauseMusic:(id)sender {
@@ -145,6 +154,30 @@
     
     self.currentTime.text = [[MusicTools sharedTools] currentTimeOfMusic];
     self.progressView.progress = [[MusicTools sharedTools] progressOfMusic];
+    
+    NSTimeInterval currentTimeFloat = [[MusicTools sharedTools] currentTimeFloatOfMusic];
+    
+    for (int i = 0; i<self.allLrcLines.count; i++) {
+        //当前应出现行的歌词
+        MusicLrc *currentLrc = self.allLrcLines[i];
+        //下次应出现行的歌词
+        MusicLrc *nextLrc = nil;
+        
+        //判断是否为最后一行，如果是就不用继续为下一行赋值
+        if (i == self.allLrcLines.count - 1) {
+            nextLrc = self.allLrcLines[i];
+        } else {
+            nextLrc = self.allLrcLines[i+1];
+        }
+        //当时间在这2行歌词之间时，才能显示歌词
+        if (currentTimeFloat >= currentLrc.time && currentTimeFloat <= nextLrc.time) {
+            self.lrcLabel.text = currentLrc.text;
+//            NSLog(@"%@", currentLrc.text);
+            self.lrcLabel.progress = (currentTimeFloat - currentLrc.time)/(nextLrc.time - currentLrc.time);
+        }
+        
+    }
+    
 }
 
 

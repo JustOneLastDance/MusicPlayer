@@ -23,7 +23,7 @@
         //1.获取所有歌词显示时间
         //[02:55.00][00:58.00]为何只是失望填密我的空虚  == line
         //正则表达式
-        NSString *pattern = @"\\[ [0~9][0~9]:[0~9][0~9].[0~9][0~9] \\]";
+        NSString *pattern = @"\\[[0-9][0-9]:[0-9][0-9]\\.[0-9][09]\\]";
         NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
         
         NSArray *allCheckingResults = [regular matchesInString:line options:NSMatchingReportCompletion range:NSMakeRange(0, line.length)];
@@ -40,6 +40,8 @@
             MusicLrc *lrc = [[MusicLrc alloc] init];
             //歌词
             lrc.text = lrcStr;
+            
+//            NSLog(@"strTime= %@  strText = %@",timeStr,lrcStr);
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             //进行日期格式化

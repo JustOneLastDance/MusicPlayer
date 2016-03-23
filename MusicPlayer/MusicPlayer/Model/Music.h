@@ -14,7 +14,7 @@
 /// 专辑图片
 @property (nonatomic, copy) NSString *image;
 /// 歌词
-@property (nonatomic, copy) NSString *lcr;
+@property (nonatomic, copy) NSString *lrc;
 /// 歌曲文件名
 @property (nonatomic, copy) NSString *mp3;
 /// 歌手名字

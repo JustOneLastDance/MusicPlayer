@@ -74,6 +74,9 @@
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cup-BF-FTG">
                                 <rect key="frame" x="0.0" y="552" width="375" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="B7W-4K-3cx"/>
+                                </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcY-zT-2aO" userLabel="currentTime">
                                 <rect key="frame" x="15" y="562" width="41.5" height="21"/>
@@ -117,11 +120,19 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="李克勤.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-Mg-J4C">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUo-vU-qiO" userLabel="歌词" customClass="JustinLabel">
+                                        <rect key="frame" x="160" y="350.5" width="54" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="PgM-01-ZhG" firstAttribute="leading" secondItem="TZD-KK-0Co" secondAttribute="leading" constant="15" id="26G-vy-q4d"/>
+                                    <constraint firstItem="PUo-vU-qiO" firstAttribute="centerX" secondItem="TZD-KK-0Co" secondAttribute="centerX" id="7is-aX-TDn"/>
                                     <constraint firstItem="PgM-01-ZhG" firstAttribute="top" secondItem="pxK-Mg-J4C" secondAttribute="bottom" constant="10" id="Rks-pq-bfb"/>
                                     <constraint firstItem="pxK-Mg-J4C" firstAttribute="top" secondItem="TZD-KK-0Co" secondAttribute="top" id="gcQ-YD-hoD"/>
+                                    <constraint firstAttribute="bottom" secondItem="PUo-vU-qiO" secondAttribute="bottom" constant="100" id="hn6-N0-jYa"/>
                                     <constraint firstItem="bLG-z1-Myh" firstAttribute="leading" secondItem="TZD-KK-0Co" secondAttribute="leading" constant="15" id="lCG-oN-zSO"/>
                                     <constraint firstAttribute="trailing" secondItem="pxK-Mg-J4C" secondAttribute="trailing" id="ndl-pc-a2X"/>
                                     <constraint firstAttribute="bottom" secondItem="bLG-z1-Myh" secondAttribute="bottom" constant="10" id="nyX-yZ-Rkg"/>
@@ -164,6 +175,7 @@
                         <outlet property="albumLabel" destination="bLG-z1-Myh" id="co1-jo-csD"/>
                         <outlet property="bgImageView" destination="1BJ-pb-Mpb" id="VFp-Rd-cLo"/>
                         <outlet property="currentTime" destination="DcY-zT-2aO" id="Kxe-vW-cj6"/>
+                        <outlet property="lrcLabel" destination="PUo-vU-qiO" id="cma-tt-QAd"/>
                         <outlet property="pauseBtn" destination="38o-M2-NcB" id="5ry-l6-DgR"/>
                         <outlet property="playBtn" destination="YY9-Ll-TmE" id="9G5-Zp-XRr"/>
                         <outlet property="progressView" destination="cup-BF-FTG" id="Xbx-9d-2ET"/>

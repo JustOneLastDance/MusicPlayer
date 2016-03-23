@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40A0AB41CA19FC900EFF4E7 /* JustinLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E40A0AB31CA19FC900EFF4E7 /* JustinLabel.m */; };
 		E42B18411CA0128700FE1D56 /* mlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = E42B18401CA0128700FE1D56 /* mlist.plist */; };
 		E42B18461CA0131D00FE1D56 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = E42B18451CA0131D00FE1D56 /* Music.m */; };
 		E42B185D1CA0157900FE1D56 /* buyao.wav in Resources */ = {isa = PBXBuildFile; fileRef = E42B18481CA0157900FE1D56 /* buyao.wav */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		0828141AF88A4578EE70EA81 /* Pods-MusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		1B4E4D95C9EB112735B88059 /* Pods-MusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		E40A0AB21CA19FC900EFF4E7 /* JustinLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustinLabel.h; sourceTree = "<group>"; };
+		E40A0AB31CA19FC900EFF4E7 /* JustinLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustinLabel.m; sourceTree = "<group>"; };
 		E42B18401CA0128700FE1D56 /* mlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mlist.plist; sourceTree = "<group>"; };
 		E42B18441CA0131D00FE1D56 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		E42B18451CA0131D00FE1D56 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				E42B18431CA012C300FE1D56 /* Tools */,
 				E4C33D321CA00B750062C019 /* AppDelegate.h */,
 				E4C33D331CA00B750062C019 /* AppDelegate.m */,
+				E40A0AB21CA19FC900EFF4E7 /* JustinLabel.h */,
+				E40A0AB31CA19FC900EFF4E7 /* JustinLabel.m */,
 				E4C33D351CA00B750062C019 /* ViewController.h */,
 				E4C33D361CA00B750062C019 /* ViewController.m */,
 				E4D408831CA010EF005C889F /* Assets.xcassets */,
@@ -366,6 +371,7 @@
 				E4C33D371CA00B750062C019 /* ViewController.m in Sources */,
 				E4BA99511CA04657005010E8 /* MusicLrcTools.m in Sources */,
 				E4C33D341CA00B750062C019 /* AppDelegate.m in Sources */,
+				E40A0AB41CA19FC900EFF4E7 /* JustinLabel.m in Sources */,
 				E4C33D311CA00B750062C019 /* main.m in Sources */,
 				E42B18461CA0131D00FE1D56 /* Music.m in Sources */,
 			);

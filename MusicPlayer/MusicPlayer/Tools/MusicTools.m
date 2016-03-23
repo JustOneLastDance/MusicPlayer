@@ -63,6 +63,10 @@
     return [NSString stringWithFormat:@"%02d:%02d", min, sec];
 }
 
+- (NSTimeInterval)currentTimeFloatOfMusic {
+    return self.player.currentTime;
+}
+
 - (NSString *)currentTimeOfMusic{
     NSTimeInterval curr = self.player.currentTime;
     
